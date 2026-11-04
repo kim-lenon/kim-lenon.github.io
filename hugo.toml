@@ -1,0 +1,17 @@
+baseURL = 'https://kim-lenon.github.io/'
+locale = 'zh-CN'
+defaultContentLanguage = 'zh'
+title = 'Kim · 学习笔记'
+hasCJKLanguage = true
+enableRobotsTXT = true
+buildFuture = false
+[params]
+  description = '关于创作、学习与独立事业的中文阅读笔记。'
+[permalinks]
+  notes = '/notes/:slug/'
+[taxonomies]
+  tag = 'tags'
+[markup.goldmark.renderer]
+  unsafe = false
+[outputs]
+  home = ['HTML', 'RSS']

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="article-layout wrap"><article class="reading"><a class="back-link" href="{{ "notes/dan-koe/" | relURL }}">← 返回阅读目录</a>{{ with .Params.series }}<p class="eyebrow">{{ . }}</p>{{ end }}<h1>{{ .Title }}</h1>
+{{ with .Params.original_title }}<p class="original-title">{{ . }}</p>{{ end }}
+{{ with .Params.video_date }}<p class="article-meta">视频发布于 {{ . }} <span>·</span> {{ $.Params.duration }} <span>·</span> {{ index $.Params.tags 0 }}</p>{{ end }}
+{{ with .Params.source_url }}<div class="source-note"><span>基于英文自动字幕整理的中文主题摘要，非逐字译文。</span><a href="{{ . }}" target="_blank" rel="noopener noreferrer">观看原视频 ↗</a></div>{{ end }}
+<div class="prose">{{ .Content }}</div>
+{{ with .Params.source_url }}<div class="article-end"><p>读到这里，也许可以带着一个问题回到原视频。</p><a href="{{ . }}" target="_blank" rel="noopener noreferrer">Dan Koe · YouTube ↗</a></div>{{ end }}
+</article>{{ if .Params.source_url }}<aside class="article-toc"><p class="eyebrow">本文内容</p>{{ .TableOfContents }}<a class="back-link" href="{{ "notes/dan-koe/" | relURL }}">全部 25 篇 →</a></aside>{{ end }}</div>
+{{ end }}

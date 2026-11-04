@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ end }}
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header wrap"><a class="brand" href="{{ "" | relURL }}">KIM<span>学习笔记</span></a><nav aria-label="主导航"><a href="{{ "notes/dan-koe/" | relURL }}">年度阅读</a><a href="{{ "about/" | relURL }}">关于</a><a href="https://github.com/kim-lenon/kim-lenon.github.io">GitHub ↗</a></nav></header>
+<main id="main">{{ block "main" . }}{{ end }}</main>
+<footer class="site-footer wrap"><span>把值得反复思考的想法，留在这里。</span><span>Hugo · <a href="{{ "index.xml" | relURL }}">RSS</a></span></footer>
+<script src="{{ "js/site.js" | relURL }}" defer></script>
+</body></html>
